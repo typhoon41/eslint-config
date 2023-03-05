@@ -1,0 +1,47 @@
+{
+  "name": "@typhoon41/eslint-config",
+  "version": "1.0.0",
+  "author": "Nikola Dragićević",
+  "description": "Nikola Dragićević's shareable config for JS/TS projects using eslint.",
+  "license": "Apache-2.0",
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {
+    "eslint": "8.28.0",
+	"@typescript-eslint/parser": "5.43.0",
+    "@typescript-eslint/eslint-plugin": "5.43.0",
+    "eslint-plugin-no-secrets": "0.8.9",
+    "eslint-plugin-no-loops": "0.3.0",
+    "eslint-plugin-no-unsanitized": "4.0.1",
+    "eslint-plugin-promise": "6.1.1",
+    "eslint-plugin-unused-imports": "2.0.0",
+    "eslint-plugin-xss": "0.1.12"
+  },
+  "peerDependencies": {
+    "eslint": "8.28.0",
+	"@typescript-eslint/parser": "5.43.0",
+    "@typescript-eslint/eslint-plugin": "5.43.0",
+    "eslint-plugin-no-secrets": "0.8.9",
+    "eslint-plugin-no-loops": "0.3.0",
+    "eslint-plugin-no-unsanitized": "4.0.1",
+    "eslint-plugin-promise": "6.1.1",
+    "eslint-plugin-unused-imports": "2.0.0",
+    "eslint-plugin-xss": "0.1.12"
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/typhoon41/eslint-config.git"
+  },
+  "keywords": [
+    "eslint",
+    "config",
+    "ts",
+    "js"
+  ],
+  "bugs": {
+    "url": "https://github.com/typhoon41/eslint-config/issues"
+  },
+  "homepage": "https://github.com/typhoon41/eslint-config#readme"
+}
