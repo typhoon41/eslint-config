@@ -16,7 +16,7 @@ module.exports = {
         "ecmaFeatures": {
           "jsx": true
         },
-        "ecmaVersion": 2015,
+        "ecmaVersion": 2020,
         "project": [
           "tsconfig.json"
         ],
@@ -24,6 +24,10 @@ module.exports = {
       },
       "plugins": [
         "@typescript-eslint",
+        "@stylistic",
+        "deprecation",
+        "import",
+        "prefer-arrow",
         "no-loops",
         "no-secrets",
         "no-unsanitized",
@@ -32,16 +36,157 @@ module.exports = {
         "xss"
       ],
       "rules": {
-        "@typescript-eslint/brace-style": [
-          "error"
-        ],
-        "@typescript-eslint/comma-dangle": [
+        "@stylistic/array-bracket-newline": "off",
+        "@stylistic/array-bracket-spacing": [
           "error",
           "never"
         ],
-        "@typescript-eslint/comma-spacing": [
+        "@stylistic/array-element-newline": "off",
+        "@stylistic/arrow-parens": [
+          "error",
+          "as-needed",
+          {
+            "requireForBlockBody": false
+          }
+        ],
+        "@stylistic/arrow-spacing": "error",
+        "@stylistic/block-spacing": "error",
+        "@stylistic/brace-style": "off",
+        "@stylistic/comma-dangle": [
+          "error",
+          "never"
+        ],
+        "@stylistic/comma-spacing": "error",
+        "@stylistic/comma-style": "error",
+        "@stylistic/computed-property-spacing": "error",
+        "@stylistic/dot-location": [
+          "error",
+          "property"
+        ],
+        "@stylistic/eol-last": "error",
+        "@stylistic/function-call-argument-newline": "off",
+        "@stylistic/function-call-spacing": "off",
+        "@stylistic/function-paren-newline": "off",
+        "@stylistic/generator-star-spacing": "error",
+        "@stylistic/implicit-arrow-linebreak": "off",
+        "@stylistic/indent": [
+          "off",
+          "tab"
+        ],
+        "@stylistic/jsx-quotes": "error",
+        "@stylistic/key-spacing": "error",
+        "@stylistic/keyword-spacing": "error",
+        "@stylistic/linebreak-style": "off",
+        "@stylistic/lines-around-comment": "error",
+        "@stylistic/lines-between-class-members": [
+          "error",
+          "always",
+          {
+            "exceptAfterSingleLine": true
+          }
+        ],
+        "@stylistic/max-len": [
+          "error",
+          {
+            "code": 120,
+            "ignoreComments": true
+          }
+        ],
+        "@stylistic/max-statements-per-line": "error",
+        "@stylistic/member-delimiter-style": [
           "error"
         ],
+        "@stylistic/multiline-ternary": "off",
+        "@stylistic/new-parens": "error",
+        "@stylistic/newline-per-chained-call": [
+          "error",
+          {
+            "ignoreChainWithDepth": 2
+          }
+        ],
+        "@stylistic/no-confusing-arrow": "error",
+        "@stylistic/no-extra-parens": "error",
+        "@stylistic/no-extra-semi": "error",
+        "@stylistic/no-floating-decimal": "off",
+        "@stylistic/no-mixed-operators": "off",
+        "@stylistic/no-mixed-spaces-and-tabs": "off",
+        "@stylistic/no-multi-spaces": "error",
+        "@stylistic/no-multiple-empty-lines": "error",
+        "@stylistic/no-tabs": "off",
+        "@stylistic/no-trailing-spaces": "error",
+        "@stylistic/no-whitespace-before-property": "error",
+        "@stylistic/nonblock-statement-body-position": [
+          "error",
+          "below"
+        ],
+        "@stylistic/object-curly-newline": "off",
+        "@stylistic/object-curly-spacing": "off",
+        "@stylistic/object-property-newline": [
+          "error",
+          {
+            "allowAllPropertiesOnSameLine": true
+          }
+        ],
+        "@stylistic/one-var-declaration-per-line": "off",
+        "@stylistic/operator-linebreak": "off",
+        "@stylistic/padded-blocks": [
+          "error",
+          "never"
+        ],
+        "@stylistic/padding-line-between-statements": "off",
+        "@stylistic/quote-props": [
+          "error",
+          "as-needed"
+        ],
+        "@stylistic/quotes": [
+          "error",
+          "single",
+          {
+            "allowTemplateLiterals": true
+          }
+        ],
+        "@stylistic/rest-spread-spacing": [
+          "error",
+          "never"
+        ],
+        "@stylistic/semi": "error",
+        "@stylistic/semi-spacing": "error",
+        "@stylistic/semi-style": "off",
+        "@stylistic/space-before-blocks": "error",
+        "@stylistic/space-before-function-paren": [
+          "error",
+          "never"
+        ],
+        "@stylistic/space-in-parens": "error",
+        "@stylistic/space-infix-ops": "error",
+        "@stylistic/space-unary-ops": "error",
+        "@stylistic/spaced-comment": "error",
+        "@stylistic/switch-colon-spacing": "error",
+        "@stylistic/template-curly-spacing": "error",
+        "@stylistic/template-tag-spacing": "error",
+        "@stylistic/type-annotation-spacing": [
+          "error",
+          {
+            "after": true,
+            "before": false,
+            "overrides": {
+              "arrow": {
+                "after": true,
+                "before": true
+              },
+              "colon": {
+                "after": true,
+                "before": false
+              }
+            }
+          }
+        ],
+        "@stylistic/wrap-iife": "off",
+        "@stylistic/wrap-regex": "off",
+        "@stylistic/yield-star-spacing": "error",
+        "@typescript-eslint/ban-ts-comments": "off",
+        "@typescript-eslint/ban-types": "error",
+        "@typescript-eslint/consistent-type-definitions": "error",
         "@typescript-eslint/consistent-type-exports": [
           "error",
           {
@@ -57,23 +202,10 @@ module.exports = {
         "@typescript-eslint/func-call-spacing": [
           "error"
         ],
-        "@typescript-eslint/indent": [
-          "off",
-          "tab"
-        ],
         "@typescript-eslint/init-declarations": [
           "off"
         ],
-        "@typescript-eslint/keyword-spacing": [
-          "error"
-        ],
-        "@typescript-eslint/lines-between-class-members": [
-          "error",
-          "always",
-          {
-            "exceptAfterSingleLine": true
-          }
-        ],
+        "@typescript-eslint/naming-convention": "off",
         "@typescript-eslint/no-array-constructor": [
           "error"
         ],
@@ -83,21 +215,13 @@ module.exports = {
         "@typescript-eslint/no-duplicate-enum-values": [
           "error"
         ],
-        "@typescript-eslint/no-duplicate-imports": [
-          "error"
-        ],
         "@typescript-eslint/no-empty-function": [
-          "error"
-        ],
-        "@typescript-eslint/no-extra-parens": [
-          "error"
-        ],
-        "@typescript-eslint/no-extra-semi": [
           "error"
         ],
         "@typescript-eslint/no-implied-eval": [
           "error"
         ],
+        "@typescript-eslint/no-import-type-side-effects": "error",
         "@typescript-eslint/no-invalid-this": [
           "error"
         ],
@@ -130,6 +254,8 @@ module.exports = {
             "checkNever": false
           }
         ],
+        "@typescript-eslint/no-mixed-enums": "error",
+        "@typescript-eslint/no-non-null-asserted-nullish-coalescing": "error",
         "@typescript-eslint/no-non-null-assertion": "error",
         "@typescript-eslint/no-redeclare": [
           "error"
@@ -143,6 +269,8 @@ module.exports = {
           "error"
         ],
         "@typescript-eslint/no-unsafe-declaration-merging": "error",
+        "@typescript-eslint/no-unsafe-enum-comparison": "error",
+        "@typescript-eslint/no-unsafe-return": "error",
         "@typescript-eslint/no-unused-expressions": [
           "error"
         ],
@@ -162,37 +290,25 @@ module.exports = {
           "error",
           "always"
         ],
-        "@typescript-eslint/quotes": [
+        "@typescript-eslint/prefer-optional-chain": "error",
+        "@typescript-eslint/prefer-readonly": "off",
+        "@typescript-eslint/prefer-readonly-parameter-types": [
           "error",
-          "single",
           {
-            "allowTemplateLiterals": true
+            "checkParameterProperties": false,
+            "ignoreInferredTypes": true,
+            "treatMethodsAsReadonly": true
           }
         ],
         "@typescript-eslint/require-await": [
           "error"
         ],
+        "@typescript-eslint/restrict-plus-operands": "error",
         "@typescript-eslint/return-await": [
           "error"
         ],
-        "@typescript-eslint/semi": [
-          "error"
-        ],
-        "@typescript-eslint/space-before-function-paren": [
-          "error",
-          "never"
-        ],
-        "@typescript-eslint/space-infix-ops": [
-          "error"
-        ],
         "accessor-pairs": "error",
-        "array-bracket-newline": "off",
-        "array-bracket-spacing": [
-          "error",
-          "never"
-        ],
         "array-callback-return": "error",
-        "array-element-newline": "off",
         "arrow-body-style": [
           "error",
           "as-needed",
@@ -200,25 +316,11 @@ module.exports = {
             "requireReturnForObjectLiteral": true
           }
         ],
-        "arrow-parens": [
-          "error",
-          "as-needed",
-          {
-            "requireForBlockBody": false
-          }
-        ],
-        "arrow-spacing": "error",
         "block-scoped-var": "error",
-        "block-spacing": "error",
-        "brace-style": "off",
         "camelcase": "warn",
         "capitalized-comments": "error",
         "class-methods-use-this": "off",
-        "comma-dangle": "off",
-        "comma-spacing": "off",
-        "comma-style": "error",
         "complexity": "error",
-        "computed-property-spacing": "error",
         "consistent-return": "error",
         "consistent-this": "error",
         "constructor-super": "error",
@@ -226,21 +328,13 @@ module.exports = {
         "default-case": "warn",
         "default-case-last": "error",
         "default-param-last": "off",
-        "dot-location": [
-          "error",
-          "property"
-        ],
+        "deprecation/deprecation": "error",
         "dot-notation": "off",
-        "eol-last": "error",
         "eqeqeq": "error",
         "for-direction": "error",
-        "func-call-spacing": "off",
         "func-name-matching": "off",
         "func-names": "error",
         "func-style": "error",
-        "function-call-argument-newline": "off",
-        "function-paren-newline": "off",
-        "generator-star-spacing": "error",
         "getter-return": "error",
         "grouped-accessor-pairs": "warn",
         "guard-for-in": "warn",
@@ -257,26 +351,148 @@ module.exports = {
           }
         ],
         "id-match": "off",
-        "implicit-arrow-linebreak": "off",
-        "import/no-duplicates": "off",
-        "indent": [
-          "off",
-          "tab"
+        "import/consistent-type-specifier-style": [
+          "off"
         ],
-        "init-declarations": "off",
-        "jsx-quotes": "error",
-        "key-spacing": "error",
-        "keyword-spacing": "off",
-        "line-comment-position": "error",
-        "linebreak-style": "off",
-        "lines-around-comment": "error",
-        "lines-between-class-members": [
-          "off",
-          "always",
+        "import/default": [
+          "error"
+        ],
+        "import/dynamic-import-chunkname": [
+          "off"
+        ],
+        "import/export": [
+          "error"
+        ],
+        "import/exports-last": [
+          "off"
+        ],
+        "import/extensions": [
+          "error",
+          "never"
+        ],
+        "import/first": [
+          "error"
+        ],
+        "import/max-dependencies": [
+          "error",
           {
-            "exceptAfterSingleLine": true
+            "ignoreTypeImports": false,
+            "max": 20
           }
         ],
+        "import/named": [
+          "off"
+        ],
+        "import/namespace": [
+          "error"
+        ],
+        "import/newline-after-import": [
+          "error"
+        ],
+        "import/no-absolute-path": [
+          "off"
+        ],
+        "import/no-amd": [
+          "error"
+        ],
+        "import/no-anonymous-default-export": [
+          "error"
+        ],
+        "import/no-commonjs": [
+          "error"
+        ],
+        "import/no-cycle": [
+          "error"
+        ],
+        "import/no-default-export": [
+          "off"
+        ],
+        "import/no-deprecated": [
+          "error"
+        ],
+        "import/no-duplicates": [
+          "error"
+        ],
+        "import/no-dynamic-require": [
+          "off"
+        ],
+        "import/no-empty-named-blocks": [
+          "error"
+        ],
+        "import/no-extraneous-dependencies": [
+          "error"
+        ],
+        "import/no-import-module-exports": [
+          "error"
+        ],
+        "import/no-internal-modules": [
+          "off"
+        ],
+        "import/no-mutable-exports": [
+          "error"
+        ],
+        "import/no-named-as-default": [
+          "error"
+        ],
+        "import/no-named-as-default-member": [
+          "error"
+        ],
+        "import/no-named-default": [
+          "error"
+        ],
+        "import/no-named-export": [
+          "off"
+        ],
+        "import/no-namespace": [
+          "off"
+        ],
+        "import/no-nodejs-modules": [
+          "off"
+        ],
+        "import/no-relative-packages": [
+          "off"
+        ],
+        "import/no-relative-parent-imports": [
+          "off"
+        ],
+        "import/no-restricted-paths": [
+          "off"
+        ],
+        "import/no-self-import": [
+          "error"
+        ],
+        "import/no-unassigned-import": [
+          "off"
+        ],
+        "import/no-unresolved": [
+          "off"
+        ],
+        "import/no-unused-modules": [
+          "off"
+        ],
+        "import/no-useless-path-segments": [
+          "error"
+        ],
+        "import/no-webpack-loader-syntax": [
+          "error"
+        ],
+        "import/order": [
+          "error",
+          {
+            "alphabetize": {
+              "caseInsensitive": true,
+              "order": "asc"
+            }
+          }
+        ],
+        "import/prefer-default-export": [
+          "off"
+        ],
+        "import/unambiguous": [
+          "error"
+        ],
+        "init-declarations": "off",
+        "line-comment-position": "error",
         "max-classes-per-file": [
           "error",
           1
@@ -284,13 +500,6 @@ module.exports = {
         "max-depth": [
           "error",
           3
-        ],
-        "max-len": [
-          "error",
-          {
-            "code": 120,
-            "ignoreComments": true
-          }
         ],
         "max-lines": [
           "error",
@@ -312,16 +521,7 @@ module.exports = {
           "error",
           20
         ],
-        "max-statements-per-line": "error",
-        "multiline-ternary": "off",
         "new-cap": "error",
-        "new-parens": "error",
-        "newline-per-chained-call": [
-          "error",
-          {
-            "ignoreChainWithDepth": 2
-          }
-        ],
         "no-alert": "error",
         "no-array-constructor": "off",
         "no-async-promise-executor": "error",
@@ -332,7 +532,6 @@ module.exports = {
         "no-class-assign": "error",
         "no-compare-neg-zero": "error",
         "no-cond-assign": "error",
-        "no-confusing-arrow": "error",
         "no-console": "error",
         "no-const-assign": "error",
         "no-constant-condition": "error",
@@ -347,7 +546,6 @@ module.exports = {
         "no-dupe-else-if": "error",
         "no-dupe-keys": "error",
         "no-duplicate-case": "error",
-        "no-duplicate-imports": "off",
         "no-else-return": "error",
         "no-empty": "off",
         "no-empty-character-class": "error",
@@ -361,10 +559,7 @@ module.exports = {
         "no-extra-bind": "error",
         "no-extra-boolean-cast": "error",
         "no-extra-label": "error",
-        "no-extra-parens": "off",
-        "no-extra-semi": "error",
         "no-fallthrough": "error",
-        "no-floating-decimal": "off",
         "no-func-assign": "error",
         "no-global-assign": "error",
         "no-implicit-coercion": "off",
@@ -385,22 +580,18 @@ module.exports = {
         "no-loss-of-precision": "off",
         "no-magic-numbers": "off",
         "no-misleading-character-class": "error",
-        "no-mixed-operators": "off",
-        "no-mixed-spaces-and-tabs": "off",
         "no-multi-assign": "error",
-        "no-multi-spaces": "error",
         "no-multi-str": "warn",
-        "no-multiple-empty-lines": "error",
         "no-negated-condition": "error",
         "no-nested-ternary": "off",
         "no-new": "off",
         "no-new-func": "error",
         "no-new-native-nonconstructor": "error",
-        "no-new-object": "error",
         "no-new-symbol": "error",
         "no-new-wrappers": "error",
         "no-nonoctal-decimal-escape": "error",
         "no-obj-calls": "error",
+        "no-object-constructor": "error",
         "no-octal": "error",
         "no-octal-escape": "error",
         "no-param-reassign": "error",
@@ -433,12 +624,10 @@ module.exports = {
         "no-shadow": "off",
         "no-shadow-restricted-names": "error",
         "no-sparse-arrays": "error",
-        "no-tabs": "off",
         "no-template-curly-in-string": "error",
         "no-ternary": "off",
         "no-this-before-super": "error",
         "no-throw-literal": "off",
-        "no-trailing-spaces": "error",
         "no-undef": "off",
         "no-undef-init": "error",
         "no-undefined": "off",
@@ -471,31 +660,19 @@ module.exports = {
         "no-var": "error",
         "no-void": "error",
         "no-warning-comments": "warn",
-        "no-whitespace-before-property": "error",
         "no-with": "error",
-        "nonblock-statement-body-position": [
-          "error",
-          "below"
-        ],
-        "object-curly-newline": "off",
-        "object-curly-spacing": "off",
-        "object-property-newline": [
-          "error",
-          {
-            "allowAllPropertiesOnSameLine": true
-          }
-        ],
         "object-shorthand": "error",
         "one-var": "off",
-        "one-var-declaration-per-line": "off",
         "operator-assignment": "error",
-        "operator-linebreak": "off",
-        "padded-blocks": [
-          "error",
-          "never"
-        ],
-        "padding-line-between-statements": "off",
         "prefer-arrow-callback": "error",
+        "prefer-arrow/prefer-arrow-functions": [
+          "error",
+          {
+            "disallowPrototype": true,
+            "singleReturnOnly": false,
+            "classPropertiesAllowed": true
+          }
+        ],
         "prefer-const": "error",
         "prefer-destructuring": "off",
         "prefer-exponentiation-operator": "off",
@@ -508,8 +685,10 @@ module.exports = {
         "prefer-rest-params": "error",
         "prefer-spread": "error",
         "prefer-template": "error",
-        "promise/always-return": ["error", {
-          "ignoreLastCallback": true
+        "promise/always-return": [
+          "error",
+          {
+            "ignoreLastCallback": true
           }
         ],
         "promise/avoid-new": "warn",
@@ -524,6 +703,7 @@ module.exports = {
           }
         ],
         "promise/no-callback-in-promise": "off",
+        "promise/no-multiple-resolved": "error",
         "promise/no-native": "off",
         "promise/no-nesting": "off",
         "promise/no-new-statics": "error",
@@ -537,33 +717,16 @@ module.exports = {
         ],
         "promise/param-names": "error",
         "promise/valid-params": "warn",
-        "quote-props": [
-          "error",
-          "as-needed"
-        ],
-        "quotes": "off",
         "radix": "error",
         "require-atomic-updates": "error",
         "require-await": "off",
         "require-unicode-regexp": "warn",
         "require-yield": "error",
-        "semi": "off",
-        "semi-spacing": "error",
-        "semi-style": "off",
         "sort-imports": "off",
         "sort-keys": "off",
         "sort-vars": "off",
-        "space-before-blocks": "error",
-        "space-before-function-paren": "off",
-        "space-in-parens": "error",
-        "space-infix-ops": "off",
-        "space-unary-ops": "error",
-        "spaced-comment": "error",
         "strict": "off",
-        "switch-colon-spacing": "error",
         "symbol-description": "error",
-        "template-curly-spacing": "error",
-        "template-tag-spacing": "error",
         "typescript-eslint/consistent-type-imports": "off",
         "unicode-bom": "off",
         "unused-imports/no-unused-imports": "error",
@@ -579,8 +742,6 @@ module.exports = {
         "use-isnan": "error",
         "valid-typeof": "error",
         "vars-on-top": "off",
-        "wrap-iife": "off",
-        "wrap-regex": "off",
         "xss/no-location-href-assign": [
           2,
           {
@@ -591,6 +752,13 @@ module.exports = {
           2,
           {
             "functions": {
+              "$": {
+                "htmlInput": true,
+                "safe": [
+                  "document",
+                  "this"
+                ]
+              },
               ".html": {
                 "htmlInput": true,
                 "htmlOutput": true
@@ -600,13 +768,6 @@ module.exports = {
                   "args": true,
                   "obj": true
                 }
-              },
-              "$": {
-                "htmlInput": true,
-                "safe": [
-                  "document",
-                  "this"
-                ]
               }
             },
             "htmlFunctionRules": [
@@ -620,7 +781,6 @@ module.exports = {
             ]
           }
         ],
-        "yield-star-spacing": "error",
         "yoda": "warn"
       }
     }
