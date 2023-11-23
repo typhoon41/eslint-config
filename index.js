@@ -32,7 +32,6 @@ module.exports = {
         "no-secrets",
         "no-unsanitized",
         "promise",
-        "unused-imports",
         "xss"
       ],
       "rules": {
@@ -729,16 +728,6 @@ module.exports = {
         "symbol-description": "error",
         "typescript-eslint/consistent-type-imports": "off",
         "unicode-bom": "off",
-        "unused-imports/no-unused-imports": "error",
-        "unused-imports/no-unused-vars": [
-          "warn",
-          {
-            "args": "after-used",
-            "argsIgnorePattern": "^_",
-            "vars": "all",
-            "varsIgnorePattern": "^_"
-          }
-        ],
         "use-isnan": "error",
         "valid-typeof": "error",
         "vars-on-top": "off",
