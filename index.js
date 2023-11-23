@@ -366,7 +366,7 @@ module.exports = {
           "off"
         ],
         "import/extensions": [
-          "error",
+          "off",
           "never"
         ],
         "import/first": [
