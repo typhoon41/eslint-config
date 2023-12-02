@@ -669,7 +669,7 @@ module.exports = {
           {
             "disallowPrototype": true,
             "singleReturnOnly": false,
-            "classPropertiesAllowed": true
+            "classPropertiesAllowed": false
           }
         ],
         "prefer-const": "error",
