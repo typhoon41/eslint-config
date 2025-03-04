@@ -327,10 +327,7 @@ export default tseslint.config({
     "array-callback-return": "error",
     "arrow-body-style": [
       "error",
-      "as-needed",
-      {
-        "requireReturnForObjectLiteral": true
-      }
+      "as-needed"
     ],
     "block-scoped-var": "error",
     "camelcase": "warn",

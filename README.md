@@ -7,20 +7,24 @@ To see the rules that this config uses, please read the [config itself](./index.
 ## Installation
 
 ```
-$ npm install --save-dev eslint @typhoon41/eslint-config
+$ npm install --save-dev @typhoon41/eslint-config
 ```
 
 ## Usage
 
-Once the `@typhoon41/eslint-config` package is installed, you can use it by specifying `@typhoon41/eslint-config` in the [`extends`](http://eslint.org/docs/user-guide/configuring#extending-configuration-files) section of your [ESLint configuration](http://eslint.org/docs/user-guide/configuring).
+Once the `@typhoon41/eslint-config` package is installed, you can use it by importing and specifying `@typhoon41/eslint-config` in the root of your configuration through spread operator and combine it with your other [`plugins`](https://eslint.org/docs/latest/use/configure/combine-configs) of your [ESLint configuration](https://eslint.org/docs/latest/use/configure/).
 
 ```js
-{
-  "extends": "@typhoon41/eslint-config",
-  "rules": {
-    // Additional, per-project rules...
-  }
-}
+import defaultConfiguration from "@typhoon41/eslint-config";
+
+export default [
+    ...defaultConfiguration,
+    {
+        "rules": {
+            // Additional, per-project rules...
+        }
+    }
+];
 ```
 
 ## License
