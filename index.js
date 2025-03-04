@@ -202,9 +202,6 @@ export default tseslint.config({
     "@typescript-eslint/dot-notation": [
       "error"
     ],
-    "@typescript-eslint/func-call-spacing": [
-      "error"
-    ],
     "@typescript-eslint/indent": [
       "off",
       "tab"
@@ -266,6 +263,7 @@ export default tseslint.config({
         "checkNever": false
       }
     ],
+    "@typescript-eslint/no-misused-spread": "error",
     "@typescript-eslint/no-mixed-enums": "error",
     "@typescript-eslint/no-non-null-asserted-nullish-coalescing": "error",
     "@typescript-eslint/no-non-null-assertion": "error",
@@ -276,9 +274,6 @@ export default tseslint.config({
     "@typescript-eslint/no-restricted-imports": "off",
     "@typescript-eslint/no-restricted-types": "error",
     "@typescript-eslint/no-shadow": [
-      "error"
-    ],
-    "@typescript-eslint/no-throw-literal": [
       "error"
     ],
     "@typescript-eslint/no-unnecessary-parameter-property-assignment": "error",
@@ -645,7 +640,7 @@ export default tseslint.config({
     "no-template-curly-in-string": "error",
     "no-ternary": "off",
     "no-this-before-super": "error",
-    "no-throw-literal": "off",
+    "no-throw-literal": "error",
     "no-undef": "off",
     "no-undef-init": "error",
     "no-undefined": "off",
