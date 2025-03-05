@@ -84,7 +84,7 @@ export default tseslint.config({
     "@stylistic/max-len": [
       "error",
       {
-        "code": 120,
+        "code": 145,
         "ignoreComments": true
       }
     ],
@@ -100,7 +100,9 @@ export default tseslint.config({
         "ignoreChainWithDepth": 2
       }
     ],
-    "@stylistic/no-confusing-arrow": "error",
+    "@stylistic/no-confusing-arrow": ["error", {
+      "onlyOneSimpleParam": true
+    }],
     "@stylistic/no-extra-parens": "error",
     "@stylistic/no-extra-semi": "error",
     "@stylistic/no-floating-decimal": "off",
@@ -281,7 +283,7 @@ export default tseslint.config({
     "@typescript-eslint/no-unsafe-declaration-merging": [
       "error"
     ],
-    "@typescript-eslint/no-unsafe-enum-comparison": "error",
+    "@typescript-eslint/no-unsafe-enum-comparison": "off",
     "@typescript-eslint/no-unsafe-function-type": "error",
     "@typescript-eslint/no-unsafe-return": "error",
     "@typescript-eslint/no-unsafe-type-assertion": "off",
@@ -306,14 +308,7 @@ export default tseslint.config({
     "@typescript-eslint/prefer-optional-chain": "error",
     "@typescript-eslint/prefer-promise-reject-errors": "off",
     "@typescript-eslint/prefer-readonly": "off",
-    "@typescript-eslint/prefer-readonly-parameter-types": [
-      "error",
-      {
-        "checkParameterProperties": false,
-        "ignoreInferredTypes": true,
-        "treatMethodsAsReadonly": true
-      }
-    ],
+    "@typescript-eslint/prefer-readonly-parameter-types": "off",
     "@typescript-eslint/related-getter-setter-pairs": "error",
     "@typescript-eslint/require-await": [
       "error"
