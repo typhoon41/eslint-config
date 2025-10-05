@@ -1,4 +1,4 @@
-import tseslint from "typescript-eslint";
+import { defineConfig } from 'eslint/config';
 import pluginPromise from "eslint-plugin-promise";
 import stylistic from "@stylistic/eslint-plugin";
 import noSecrets from "eslint-plugin-no-secrets";
@@ -7,7 +7,7 @@ import noUnsanitized from "eslint-plugin-no-unsanitized";
 import unusedImports from "eslint-plugin-unused-imports";
 import arrowFunctions from "eslint-plugin-prefer-arrow-functions";
 
-export default tseslint.config({
+export default defineConfig({
   "files": ["src/**/*.ts"],
   "languageOptions": {
     "ecmaVersion": "latest",
@@ -280,6 +280,7 @@ export default tseslint.config({
     ],
     "@typescript-eslint/no-unnecessary-parameter-property-assignment": "error",
     "@typescript-eslint/no-unnecessary-template-expression": "error",
+    "@typescript-eslint/no-unnecessary-type-conversion": "error",
     "@typescript-eslint/no-unsafe-declaration-merging": [
       "error"
     ],
@@ -367,6 +368,10 @@ export default tseslint.config({
     ],
     "import/dynamic-import-chunkname": [
       "off"
+    ],
+    "import/enforce-node-protocol-usage": [
+      "warn",
+      "never"
     ],
     "import/export": [
       "error"
@@ -693,6 +698,7 @@ export default tseslint.config({
     "prefer-rest-params": "error",
     "prefer-spread": "error",
     "prefer-template": "error",
+    "preserve-caught-errors": "error",
     "promise/always-return": [
       "error",
       {
