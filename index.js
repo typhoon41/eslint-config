@@ -1,4 +1,5 @@
 import { defineConfig } from 'eslint/config';
+import tseslint from "typescript-eslint";
 import pluginPromise from "eslint-plugin-promise";
 import stylistic from "@stylistic/eslint-plugin";
 import noSecrets from "eslint-plugin-no-secrets";
@@ -143,7 +144,7 @@ export default defineConfig({
       "error",
       "single",
       {
-        "allowTemplateLiterals": true
+        "allowTemplateLiterals": "always"
       }
     ],
     "@stylistic/rest-spread-spacing": [
@@ -698,7 +699,7 @@ export default defineConfig({
     "prefer-rest-params": "error",
     "prefer-spread": "error",
     "prefer-template": "error",
-    "preserve-caught-errors": "error",
+    "preserve-caught-error": "error",
     "promise/always-return": [
       "error",
       {
