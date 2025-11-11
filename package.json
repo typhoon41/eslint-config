@@ -1,6 +1,6 @@
 {
   "name": "@typhoon41/eslint-config",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "type": "module",
   "author": "Nikola Dragićević",
   "description": "Nikola Dragićević's shareable config for JS/TS projects using eslint.",
@@ -9,11 +9,11 @@
     "index.js"
   ],
   "dependencies": {
-    "eslint": "9.37.0",
-    "typescript-eslint": "8.45.0",
-    "@stylistic/eslint-plugin": "5.4.0",
+    "eslint": "9.39.1",
+    "typescript-eslint": "8.46.4",
+    "@stylistic/eslint-plugin": "5.5.0",
     "eslint-plugin-import": "2.32.0",
-    "eslint-plugin-unused-imports": "4.2.0",
+    "eslint-plugin-unused-imports": "4.3.0",
     "eslint-plugin-no-secrets": "2.2.1",
     "eslint-plugin-no-unsanitized": "4.1.4",
     "eslint-plugin-prefer-arrow-functions": "3.9.1",
