@@ -17,14 +17,16 @@ resources:
       type: github
       name: typhoon41/toolkit
       endpoint: typhoon41
-      ref: refs/tags/v1.0.0
+      ref: refs/tags/v1.1.0
 
 stages:
   - template: release/templates/stages/package-release.yml@toolkit
     parameters:
       releaseNotes: true
       environment: package-release
-      releaseVariableGroup: release-secrets
+      releaseVariableGroup: ''                   # both service connections below replace the secrets
+      npmServiceConnection: 'NPM - typhoon41'
+      useGitHubServiceConnection: true
       npmAccess: public
       enforceCommitConvention: true
       buildSteps:
