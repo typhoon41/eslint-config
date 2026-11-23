@@ -17,7 +17,6 @@ resources:
       type: github
       name: typhoon41/toolkit
       endpoint: typhoon41
-      ref: refs/heads/main
 
 stages:
   - template: release/templates/stages/package-release.yml@toolkit
