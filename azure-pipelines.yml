@@ -16,7 +16,7 @@ resources:
     - repository: toolkit
       type: github
       name: typhoon41/toolkit
-      endpoint: github-connection  # the GitHub service connection
+      endpoint: typhoon41
       ref: refs/tags/v1.0.0
 
 stages:
