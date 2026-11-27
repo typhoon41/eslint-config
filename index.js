@@ -70,11 +70,13 @@ export default defineConfig({
       "tab"
     ],
     "@stylistic/indent-binary-ops": "off",
+    "@stylistic/jsx-props-style": "off",
     "@stylistic/jsx-quotes": "error",
     "@stylistic/key-spacing": "error",
     "@stylistic/keyword-spacing": "error",
     "@stylistic/line-comment-position": "error",
     "@stylistic/linebreak-style": "off",
+    "@stylistic/list-style": "off",
     "@stylistic/lines-around-comment": "error",
     "@stylistic/lines-between-class-members": [
       "error",
@@ -171,12 +173,8 @@ export default defineConfig({
       "error",
       {
         "after": true,
-        "before": false,
+        "before": true,
         "overrides": {
-          "arrow": {
-            "after": true,
-            "before": true
-          },
           "colon": {
             "after": true,
             "before": false
