@@ -3,7 +3,8 @@ import tseslint from "typescript-eslint";
 import pluginPromise from "eslint-plugin-promise";
 import stylistic from "@stylistic/eslint-plugin";
 import noSecrets from "eslint-plugin-no-secrets";
-import importPlugin from "eslint-plugin-import";
+// eslint-plugin-import is disabled until it supports ESLint 10.
+// import importPlugin from "eslint-plugin-import";
 import noUnsanitized from "eslint-plugin-no-unsanitized";
 import unusedImports from "eslint-plugin-unused-imports";
 import arrowFunctions from "eslint-plugin-prefer-arrow-functions";
@@ -23,7 +24,7 @@ export default defineConfig({
     "no-unsanitized": noUnsanitized,
     "@stylistic": stylistic,
     "@typescript-eslint": tseslint.plugin,
-    "import": importPlugin,
+    // "import": importPlugin,
     "no-secrets": noSecrets,
     "prefer-arrow-functions": arrowFunctions,
     "promise": pluginPromise,
@@ -69,11 +70,13 @@ export default defineConfig({
       "tab"
     ],
     "@stylistic/indent-binary-ops": "off",
+    "@stylistic/jsx-props-style": "off",
     "@stylistic/jsx-quotes": "error",
     "@stylistic/key-spacing": "error",
     "@stylistic/keyword-spacing": "error",
     "@stylistic/line-comment-position": "error",
     "@stylistic/linebreak-style": "off",
+    "@stylistic/list-style": "off",
     "@stylistic/lines-around-comment": "error",
     "@stylistic/lines-between-class-members": [
       "error",
@@ -170,12 +173,8 @@ export default defineConfig({
       "error",
       {
         "after": true,
-        "before": false,
+        "before": true,
         "overrides": {
-          "arrow": {
-            "after": true,
-            "before": true
-          },
           "colon": {
             "after": true,
             "before": false
@@ -205,6 +204,12 @@ export default defineConfig({
     "@typescript-eslint/dot-notation": [
       "error"
     ],
+    "@typescript-eslint/explicit-member-accessibility": [
+      "error",
+      {
+        "accessibility": "no-public"
+      }
+    ],
     "@typescript-eslint/indent": [
       "off",
       "tab"
@@ -230,6 +235,7 @@ export default defineConfig({
 
     "@typescript-eslint/no-empty-object-type": "off",
     "@typescript-eslint/no-floating-promises": "error",
+    "@typescript-eslint/no-generated-empty-object-type": "error",
     "@typescript-eslint/no-implied-eval": [
       "error"
     ],
@@ -282,9 +288,11 @@ export default defineConfig({
     "@typescript-eslint/no-unnecessary-parameter-property-assignment": "error",
     "@typescript-eslint/no-unnecessary-template-expression": "error",
     "@typescript-eslint/no-unnecessary-type-conversion": "error",
+    "@typescript-eslint/no-unsafe-class-instance-assignment": "error",
     "@typescript-eslint/no-unsafe-declaration-merging": [
       "error"
     ],
+    "@typescript-eslint/no-unsafe-enum-assignment": "error",
     "@typescript-eslint/no-unsafe-enum-comparison": "off",
     "@typescript-eslint/no-unsafe-function-type": "error",
     "@typescript-eslint/no-unsafe-return": "error",
@@ -293,6 +301,7 @@ export default defineConfig({
     "@typescript-eslint/no-unused-expressions": [
       "error"
     ],
+    "@typescript-eslint/no-unused-private-class-members": "off",
     "@typescript-eslint/no-unused-vars": [
       "error",
       {
@@ -305,11 +314,12 @@ export default defineConfig({
     "@typescript-eslint/no-useless-constructor": [
       "error"
     ],
+    "@typescript-eslint/no-useless-default-assignment": "off",
     "@typescript-eslint/no-wrapper-object-types": "error",
     "@typescript-eslint/parameter-properties": "off",
     "@typescript-eslint/prefer-optional-chain": "error",
     "@typescript-eslint/prefer-promise-reject-errors": "off",
-    "@typescript-eslint/prefer-readonly": "off",
+    "@typescript-eslint/prefer-readonly": "error",
     "@typescript-eslint/prefer-readonly-parameter-types": "off",
     "@typescript-eslint/related-getter-setter-pairs": "error",
     "@typescript-eslint/require-await": [
@@ -361,150 +371,151 @@ export default defineConfig({
       }
     ],
     "id-match": "off",
-    "import/consistent-type-specifier-style": [
-      "off"
-    ],
-    "import/default": [
-      "error"
-    ],
-    "import/dynamic-import-chunkname": [
-      "off"
-    ],
-    "import/enforce-node-protocol-usage": [
-      "warn",
-      "never"
-    ],
-    "import/export": [
-      "error"
-    ],
-    "import/exports-last": [
-      "off"
-    ],
-    "import/extensions": [
-      "off",
-      "never"
-    ],
-    "import/first": [
-      "error"
-    ],
-    "import/max-dependencies": [
-      "error",
-      {
-        "ignoreTypeImports": false,
-        "max": 20
-      }
-    ],
-    "import/named": [
-      "off"
-    ],
-    "import/namespace": [
-      "error"
-    ],
-    "import/newline-after-import": [
-      "error"
-    ],
-    "import/no-absolute-path": [
-      "off"
-    ],
-    "import/no-amd": [
-      "error"
-    ],
-    "import/no-anonymous-default-export": [
-      "error"
-    ],
-    "import/no-commonjs": [
-      "error"
-    ],
-    "import/no-cycle": [
-      "error"
-    ],
-    "import/no-default-export": [
-      "off"
-    ],
-    "import/no-deprecated": [
-      "error"
-    ],
-    "import/no-duplicates": [
-      "error"
-    ],
-    "import/no-dynamic-require": [
-      "off"
-    ],
-    "import/no-empty-named-blocks": [
-      "error"
-    ],
-    "import/no-extraneous-dependencies": [
-      "error"
-    ],
-    "import/no-import-module-exports": [
-      "error"
-    ],
-    "import/no-internal-modules": [
-      "off"
-    ],
-    "import/no-mutable-exports": [
-      "error"
-    ],
-    "import/no-named-as-default": [
-      "error"
-    ],
-    "import/no-named-as-default-member": [
-      "error"
-    ],
-    "import/no-named-default": [
-      "error"
-    ],
-    "import/no-named-export": [
-      "off"
-    ],
-    "import/no-namespace": [
-      "off"
-    ],
-    "import/no-nodejs-modules": [
-      "off"
-    ],
-    "import/no-relative-packages": [
-      "off"
-    ],
-    "import/no-relative-parent-imports": [
-      "off"
-    ],
-    "import/no-restricted-paths": [
-      "off"
-    ],
-    "import/no-self-import": [
-      "error"
-    ],
-    "import/no-unassigned-import": [
-      "off"
-    ],
-    "import/no-unresolved": [
-      "off"
-    ],
-    "import/no-unused-modules": [
-      "off"
-    ],
-    "import/no-useless-path-segments": [
-      "error"
-    ],
-    "import/no-webpack-loader-syntax": [
-      "error"
-    ],
-    "import/order": [
-      "error",
-      {
-        "alphabetize": {
-          "caseInsensitive": true,
-          "order": "asc"
-        }
-      }
-    ],
-    "import/prefer-default-export": [
-      "off"
-    ],
-    "import/unambiguous": [
-      "error"
-    ],
+    // Rules of eslint-plugin-import, disabled until it supports ESLint 10.
+    // "import/consistent-type-specifier-style": [
+    //   "off"
+    // ],
+    // "import/default": [
+    //   "error"
+    // ],
+    // "import/dynamic-import-chunkname": [
+    //   "off"
+    // ],
+    // "import/enforce-node-protocol-usage": [
+    //   "warn",
+    //   "never"
+    // ],
+    // "import/export": [
+    //   "error"
+    // ],
+    // "import/exports-last": [
+    //   "off"
+    // ],
+    // "import/extensions": [
+    //   "off",
+    //   "never"
+    // ],
+    // "import/first": [
+    //   "error"
+    // ],
+    // "import/max-dependencies": [
+    //   "error",
+    //   {
+    //     "ignoreTypeImports": false,
+    //     "max": 20
+    //   }
+    // ],
+    // "import/named": [
+    //   "off"
+    // ],
+    // "import/namespace": [
+    //   "error"
+    // ],
+    // "import/newline-after-import": [
+    //   "error"
+    // ],
+    // "import/no-absolute-path": [
+    //   "off"
+    // ],
+    // "import/no-amd": [
+    //   "error"
+    // ],
+    // "import/no-anonymous-default-export": [
+    //   "error"
+    // ],
+    // "import/no-commonjs": [
+    //   "error"
+    // ],
+    // "import/no-cycle": [
+    //   "error"
+    // ],
+    // "import/no-default-export": [
+    //   "off"
+    // ],
+    // "import/no-deprecated": [
+    //   "error"
+    // ],
+    // "import/no-duplicates": [
+    //   "error"
+    // ],
+    // "import/no-dynamic-require": [
+    //   "off"
+    // ],
+    // "import/no-empty-named-blocks": [
+    //   "error"
+    // ],
+    // "import/no-extraneous-dependencies": [
+    //   "error"
+    // ],
+    // "import/no-import-module-exports": [
+    //   "error"
+    // ],
+    // "import/no-internal-modules": [
+    //   "off"
+    // ],
+    // "import/no-mutable-exports": [
+    //   "error"
+    // ],
+    // "import/no-named-as-default": [
+    //   "error"
+    // ],
+    // "import/no-named-as-default-member": [
+    //   "error"
+    // ],
+    // "import/no-named-default": [
+    //   "error"
+    // ],
+    // "import/no-named-export": [
+    //   "off"
+    // ],
+    // "import/no-namespace": [
+    //   "off"
+    // ],
+    // "import/no-nodejs-modules": [
+    //   "off"
+    // ],
+    // "import/no-relative-packages": [
+    //   "off"
+    // ],
+    // "import/no-relative-parent-imports": [
+    //   "off"
+    // ],
+    // "import/no-restricted-paths": [
+    //   "off"
+    // ],
+    // "import/no-self-import": [
+    //   "error"
+    // ],
+    // "import/no-unassigned-import": [
+    //   "off"
+    // ],
+    // "import/no-unresolved": [
+    //   "off"
+    // ],
+    // "import/no-unused-modules": [
+    //   "off"
+    // ],
+    // "import/no-useless-path-segments": [
+    //   "error"
+    // ],
+    // "import/no-webpack-loader-syntax": [
+    //   "error"
+    // ],
+    // "import/order": [
+    //   "error",
+    //   {
+    //     "alphabetize": {
+    //       "caseInsensitive": true,
+    //       "order": "asc"
+    //     }
+    //   }
+    // ],
+    // "import/prefer-default-export": [
+    //   "off"
+    // ],
+    // "import/unambiguous": [
+    //   "error"
+    // ],
     "init-declarations": "off",
     "max-classes-per-file": [
       "error",
@@ -655,7 +666,7 @@ export default defineConfig({
     "no-unsanitized/property": "error",
     "no-unused-expressions": "off",
     "no-unused-labels": "error",
-    "no-unused-private-class-members": "error",
+    "no-unused-private-class-members": "off",
     "no-unused-vars": "off",
     "no-use-before-define": "off",
     "no-useless-assignment": "error",

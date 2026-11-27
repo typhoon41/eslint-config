@@ -4,7 +4,7 @@ This file provides guidance to agents when working with code in this repository.
 
 ## What this is
 
-`@typhoon41/eslint-config`: a strict, shareable ESLint 9 flat config for TypeScript, published publicly on
+`@typhoon41/eslint-config`: a strict, shareable ESLint 10 flat config for TypeScript, published publicly on
 npmjs.org. The whole package is `index.js`: one `defineConfig` block for `src/**/*.ts` with typed linting
 (`parserOptions.projectService`). The plugins it uses are runtime `dependencies` pinned to exact versions, so
 consumers get them transitively and only import the config (see `README.md`).
