@@ -204,6 +204,12 @@ export default defineConfig({
     "@typescript-eslint/dot-notation": [
       "error"
     ],
+    "@typescript-eslint/explicit-member-accessibility": [
+      "error",
+      {
+        "accessibility": "no-public"
+      }
+    ],
     "@typescript-eslint/indent": [
       "off",
       "tab"
@@ -229,6 +235,7 @@ export default defineConfig({
 
     "@typescript-eslint/no-empty-object-type": "off",
     "@typescript-eslint/no-floating-promises": "error",
+    "@typescript-eslint/no-generated-empty-object-type": "error",
     "@typescript-eslint/no-implied-eval": [
       "error"
     ],
@@ -281,9 +288,11 @@ export default defineConfig({
     "@typescript-eslint/no-unnecessary-parameter-property-assignment": "error",
     "@typescript-eslint/no-unnecessary-template-expression": "error",
     "@typescript-eslint/no-unnecessary-type-conversion": "error",
+    "@typescript-eslint/no-unsafe-class-instance-assignment": "error",
     "@typescript-eslint/no-unsafe-declaration-merging": [
       "error"
     ],
+    "@typescript-eslint/no-unsafe-enum-assignment": "error",
     "@typescript-eslint/no-unsafe-enum-comparison": "off",
     "@typescript-eslint/no-unsafe-function-type": "error",
     "@typescript-eslint/no-unsafe-return": "error",
@@ -292,6 +301,7 @@ export default defineConfig({
     "@typescript-eslint/no-unused-expressions": [
       "error"
     ],
+    "@typescript-eslint/no-unused-private-class-members": "off",
     "@typescript-eslint/no-unused-vars": [
       "error",
       {
@@ -304,11 +314,12 @@ export default defineConfig({
     "@typescript-eslint/no-useless-constructor": [
       "error"
     ],
+    "@typescript-eslint/no-useless-default-assignment": "off",
     "@typescript-eslint/no-wrapper-object-types": "error",
     "@typescript-eslint/parameter-properties": "off",
     "@typescript-eslint/prefer-optional-chain": "error",
     "@typescript-eslint/prefer-promise-reject-errors": "off",
-    "@typescript-eslint/prefer-readonly": "off",
+    "@typescript-eslint/prefer-readonly": "error",
     "@typescript-eslint/prefer-readonly-parameter-types": "off",
     "@typescript-eslint/related-getter-setter-pairs": "error",
     "@typescript-eslint/require-await": [
@@ -655,7 +666,7 @@ export default defineConfig({
     "no-unsanitized/property": "error",
     "no-unused-expressions": "off",
     "no-unused-labels": "error",
-    "no-unused-private-class-members": "error",
+    "no-unused-private-class-members": "off",
     "no-unused-vars": "off",
     "no-use-before-define": "off",
     "no-useless-assignment": "error",
